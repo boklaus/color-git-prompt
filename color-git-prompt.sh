@@ -39,13 +39,13 @@ function _color_git_prompt {
     fi
 
     # Blink for number of commits ahead
-    if [[ ${git_ahead_number} != "0" ]]; 
+    if [[ $(( ${git_ahead_number} )) -gt 0 ]]; 
     then
       PROMPT=$PROMPT$BLINK_WHITE" +"$git_ahead_number
     fi
 
     # Blink for number of commits behind
-    if [[ ${git_behind_number} != "0" ]]; 
+    if [[ $(( ${git_behind_number} )) -gt 0 ]]; 
     then
       PROMPT=$PROMPT$BLINK_WHITE" -"$git_behind_number
     fi
